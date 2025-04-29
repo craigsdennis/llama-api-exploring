@@ -1,0 +1,330 @@
+:root {
+  --meta-bg: #18191a;
+  --meta-card-bg: #242526;
+  --meta-text: #e4e6eb;
+  --meta-secondary-text: #b0b3b8;
+  --meta-hover: #3a3b3c;
+  --cloudflare-orange: #f6821f;
+  --spacing: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--meta-bg);
+  color: var(--meta-text);
+  line-height: 1.5;
+  padding: var(--spacing);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  margin-bottom: var(--spacing);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing);
+  flex: 1;
+}
+
+header {
+  margin-bottom: calc(var(--spacing) * 2);
+  text-align: center;
+}
+
+header h1 {
+  color: var(--cloudflare-orange);
+}
+
+.results-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+@media (min-width: 768px) {
+  .results-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.description-container, .extraction-container {
+  padding: var(--spacing);
+  background-color: var(--meta-card-bg);
+  border-radius: 8px;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.extraction-container {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.json-output {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.json-section {
+  background-color: var(--meta-hover);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.json-section h4 {
+  color: var(--cloudflare-orange);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.json-section ul {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.color-label {
+  background-color: var(--meta-bg);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.description-container h3, .extraction-container h3 {
+  margin-bottom: 8px;
+  color: var(--cloudflare-orange);
+}
+
+/* Markdown styling for the description container */
+.description-container {
+  line-height: 1.6;
+}
+
+.description-container h1, 
+.description-container h2, 
+.description-container h3, 
+.description-container h4, 
+.description-container h5, 
+.description-container h6 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--meta-text);
+}
+
+.description-container h1 { font-size: 1.8em; }
+.description-container h2 { font-size: 1.6em; }
+.description-container h3 { font-size: 1.4em; }
+.description-container h4 { font-size: 1.2em; }
+.description-container h5 { font-size: 1.1em; }
+.description-container h6 { font-size: 1em; }
+
+.description-container ul, 
+.description-container ol {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.description-container p {
+  margin-bottom: 12px;
+}
+
+.description-container code {
+  background-color: var(--meta-hover);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.description-container pre {
+  background-color: var(--meta-hover);
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+.description-container blockquote {
+  border-left: 3px solid var(--cloudflare-orange);
+  padding-left: 12px;
+  margin-left: 8px;
+  color: var(--meta-secondary-text);
+}
+
+.capture-section {
+  background-color: var(--meta-card-bg);
+  border-radius: 8px;
+  padding: var(--spacing);
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing);
+}
+
+#video {
+  width: 100%;
+  border-radius: 4px;
+  background-color: var(--meta-hover);
+}
+
+#canvas {
+  display: none;
+}
+
+.preview-container {
+  margin-top: var(--spacing);
+  text-align: center;
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+  margin-bottom: var(--spacing);
+  display: none;
+}
+
+button {
+  background-color: var(--meta-card-bg);
+  color: var(--meta-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+button:hover {
+  background-color: var(--meta-hover);
+}
+
+button.primary {
+  background-color: var(--cloudflare-orange);
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #e67418;
+}
+
+.file-input-container {
+  margin-top: var(--spacing);
+}
+
+#fileInput {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  background-color: var(--meta-card-bg);
+  color: var(--meta-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.file-label:hover {
+  background-color: var(--meta-hover);
+}
+
+.loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--cloudflare-orange);
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #ff3b30;
+  margin-top: var(--spacing);
+  padding: var(--spacing);
+  background-color: rgba(255, 59, 48, 0.1);
+  border-radius: 8px;
+}
+
+.footer {
+  text-align: center;
+  padding: var(--spacing);
+  background-color: var(--meta-card-bg);
+  color: var(--meta-secondary-text);
+  margin-top: auto;
+  border-radius: 8px;
+}
+
+.footer a {
+  color: var(--cloudflare-orange);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.footer a:hover {
+  text-decoration: none;
+  filter: brightness(120%);
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--cloudflare-orange);
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}

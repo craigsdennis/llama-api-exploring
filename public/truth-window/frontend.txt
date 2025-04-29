@@ -1,0 +1,9 @@
+I want to create an app that uses the Webcam to snap photos, and enables      │
+│   photo uploads. Each photo should have separate container and we'll show       │
+│   there streaming descriptions from /api/photos/describe  and JSON outputs      │
+│   /api/photos/extract. Let's work with the front end first. Show the photo      │
+│   before sending it and make a button that says Describe. Use POST to submit    │
+│   JSON and send the image as a base64 dataURL. I want the vibe to be in Meta    │
+│   Dark Mode style and throw in a little Cloudflare Orange where appropriate.
+
+Total cost:            $0.3617
