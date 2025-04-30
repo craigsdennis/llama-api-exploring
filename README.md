@@ -4,7 +4,7 @@ Meta launched a new [LLama API on April 29th](https://llama.developer.meta.com/d
 
 ## Develop
 
-Copy [`./dev.vars.example`](./.dev.vars.example) to `./dev/vars`
+Copy [`./dev.vars.example`](./.dev.vars.example) to `./dev.vars`
 
 ```bash
 npm run dev
